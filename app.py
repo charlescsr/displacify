@@ -2,9 +2,9 @@ from flask import Flask, url_for, render_template, request
 from flaskext.markdown import Markdown
 
 #NLP Part
-import spacy
+import en_core_web_sm
 from spacy import displacy
-nlp = spacy.load('en')
+nlp = en_core_web_sm.load()
 import json
 
 app = Flask(__name__)
