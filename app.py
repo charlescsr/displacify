@@ -10,16 +10,22 @@ import json
 app = Flask(__name__)
 Markdown(app)
 
+HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem">{}</div>"""
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/input', methods=['POST'])
+def inp():
+    return render_template('input.html')
 
 @app.route('/extract', methods=['POST'])
 def extract():
     if request.method == 'POST':
         raw = request.form['rawtext']
         doc = nlp(raw)
-        html = displacy(doc, style='ent')
+        html = displacy.render(doc, style='ent')
         html = html.replace('\n\n', '\n')
         res = HTML_WRAPPER.format(html)
     

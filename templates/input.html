@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add text
+{% endblock %}
+
+{% block content %}
+    <main class="page login-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Input Text</h2>
+                    <p>Using the Text box below input the text to Displacify</p>
+                </div>
+                <form action="/extract" method="POST" enctype="multipart/form-data">
+                    <div class="form-group"><label for="rawtext">Text</label><textarea name='rawtext' class="form-control"></textarea></div><button  style="align-self: start;" class="btn btn-primary" type="reset">Clear</button> &nbsp; &nbsp;  &nbsp;  &nbsp; <input  class="btn btn-primary" type="submit" value="Submit"></form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Displacify
+{% endblock %}
+
+{% block content %}
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image:url(&quot;{{url_for('static', filename='img/tech/image4.jpg')}}&quot;);color:rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2>Displacify</h2>
+                <form method="POST" action="/input">
+                <p>Input your text and see it highlighted using NER(Named Entity Recognition)</p><button class="btn btn-outline-light btn-lg" type="submit">Click to start</button></div>
+                </form>    
+        </section>
+    </main>
+{% endblock %}

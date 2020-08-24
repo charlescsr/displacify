@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Result
+{% endblock %}
+
+{% block content %}
+    <main class="page">
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Input</h2>
+                    <p>{{rawtext}}</p>
+                </div>
+                <div class="block-heading">
+                    <h2 class="text-info">Result</h2>
+                    <p>{{result | markdown}}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
